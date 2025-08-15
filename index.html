@@ -58,10 +58,16 @@
     .process-step-img:hover{transform:scale(1.25);z-index:10}
 
     /* modal flex helper (Tailwind handles layout) */
+
+
   </style>
 </head>
 
+
 <body>
+
+
+
   <canvas id="stars"></canvas>
 
   <!-- Floating Nav -->
@@ -192,6 +198,7 @@
       <div id="thankYouMessage" class="hidden text-center mt-6">
         <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_3rwasyjy.json" background="transparent" speed="1" style="width:100px;height:100px;margin:0 auto;" autoplay></lottie-player>
         <p class="text-white mt-4">Thank you! We’ll get back to you shortly.</p>
+        
       </div>
     </div>
   </div>
@@ -239,49 +246,56 @@
       const thankYouMessage = document.getElementById('thankYouMessage');
       const submitBtn = document.getElementById('contactSubmit');
 
-      const ENDPOINT = 'http://localhost:5000/api/contact'; // change if different
+      const ENDPOINT = 'https://backend-6fb5.onrender.com/api/contact'; // change if different
+        if (form) {
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
 
-      if (form) {
-        form.addEventListener('submit', async function (e) {
-          e.preventDefault();
+        // basic client-side validation
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const message = document.getElementById('message').value.trim();
 
-          // basic client-side validation
-          const name = document.getElementById('name').value.trim();
-          const email = document.getElementById('email').value.trim();
-          const phone = document.getElementById('phone').value.trim();
-          const message = document.getElementById('message').value.trim();
-
-          if (!name || !email || !message) {
+        if (!name || !email || !message) {
             alert('Please fill in required fields.');
             return;
-          }
+        }
 
-          submitBtn.disabled = true;
+        submitBtn.disabled = true;
 
-          try {
+        try {
             const res = await fetch(ENDPOINT, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ name, email, phone, message })
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, phone, message })
             });
 
             if (res.ok) {
-              form.reset();
-              form.classList.add('hidden');
-              thankYouMessage.classList.remove('hidden');
+                form.reset();
+                form.classList.add('hidden');
+                thankYouMessage.classList.remove('hidden');
+
+                // Automatically bring back the form after 5 seconds
+                setTimeout(() => {
+                    thankYouMessage.classList.add('hidden');
+                    form.classList.remove('hidden');
+                }, 5000);
+
             } else {
-              const text = await res.text();
-              console.error('Server returned error:', text);
-              alert('Error submitting form.');
+                const text = await res.text();
+                console.error('Server returned error:', text);
+                alert('Error submitting form.');
             }
-          } catch (err) {
+        } catch (err) {
             console.error('Network error:', err);
             alert('Network error submitting form.');
-          } finally {
+        } finally {
             submitBtn.disabled = false;
-          }
-        });
-      }
+        }
+    });
+}
+
 
       /* ---------- Stars background ---------- */
       (function initStars() {
