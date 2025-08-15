@@ -90,7 +90,7 @@
   <!-- Floating Nav -->
   <nav class="floating-nav fixed top-6 left-1/2 transform -translate-x-1/2 z-50 rounded-full px-6 py-3 flex space-x-6 text-sm text-white">
     <a href="#" id="openContact">📞 <span>We’ll Reach You in 10 Mins</span></a>
-    <a href="#" id="openTools">🛠 <span>Tools We Use</span></a>
+    <a href="toolweuse.html" id="openTools">🛠 <span>Tools We Use</span></a>
     <a href="#" id="openSocial">🌐 <span>Our Social Life</span></a>
     <a href="#" id="openWhatsApp">💬 <span>WhatsApp</span></a>
   </nav>
@@ -311,6 +311,14 @@
             submitBtn.disabled = false;
           }
         });
+        // Check URL for ?openContact=true
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get('openContact') === 'true') {
+    toggleModal(contactModal, true);
+    // Optionally remove the query from URL without reload
+    window.history.replaceState({}, document.title, window.location.pathname);
+}
+
       }
 
       // Stars background
