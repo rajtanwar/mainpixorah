@@ -10,11 +10,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// ✅ Connect MongoDB
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('✅ MongoDB connected'))
   .catch(err => console.error('❌ DB connection failed:', err));
 
-// POST endpoint to receive form data
+// ✅ Contact form endpoint
 app.post('/api/contact', async (req, res) => {
   try {
     const contact = new Contact(req.body);
@@ -24,6 +25,7 @@ app.post('/api/contact', async (req, res) => {
     res.status(500).json({ message: 'Failed to submit form', error: err });
   }
 });
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
