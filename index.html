@@ -233,185 +233,131 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      AOS.init();
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    AOS.init();
 
-      // Modal and form references
-      const contactModal = document.getElementById('contactModal');
-      const openContact = document.getElementById('openContact');
-      const openSocial = document.getElementById('openSocial');
-      const openWhatsApp = document.getElementById('openWhatsApp');
-      const modalCloses = document.querySelectorAll('.modal-close');
+    // Modal and form references
+    const contactModal = document.getElementById('contactModal');
+    const openContact = document.getElementById('openContact');
+    const openSocial = document.getElementById('openSocial');
+    const openWhatsApp = document.getElementById('openWhatsApp');
+    const modalCloses = document.querySelectorAll('.modal-close');
 
-      const form = document.getElementById('contactForm');
-      const thankYouMessage = document.getElementById('thankYouMessage');
-      const submitBtn = document.getElementById('contactSubmit');
+    const form = document.getElementById('contactForm');
+    const thankYouMessage = document.getElementById('thankYouMessage');
+    const submitBtn = document.getElementById('contactSubmit');
 
-      const ENDPOINT = 'https://backend-6fb5.onrender.com/api/contact';
+    const ENDPOINT = 'https://backend-6fb5.onrender.com/api/contact';
 
-      function toggleModal(show) {
-        if (show) {
-          form.classList.remove('hidden');
-          thankYouMessage.classList.add('hidden');
-          submitBtn.disabled = false;
-          contactModal.classList.remove('hidden');
-          contactModal.classList.add('flex');
-          contactModal.setAttribute('aria-hidden', 'false');
-        } else {
-          contactModal.classList.add('hidden');
-          contactModal.classList.remove('flex');
-          contactModal.setAttribute('aria-hidden', 'true');
-        }
+    function toggleModal(show) {
+      if (show) {
+        form.classList.remove('hidden');
+        thankYouMessage.classList.add('hidden');
+        submitBtn.disabled = false;
+        contactModal.classList.remove('hidden');
+        contactModal.classList.add('flex');
+        contactModal.setAttribute('aria-hidden', 'false');
+      } else {
+        contactModal.classList.add('hidden');
+        contactModal.classList.remove('flex');
+        contactModal.setAttribute('aria-hidden', 'true');
       }
+    }
 
-      openContact && openContact.addEventListener('click', e => {
-        e.preventDefault();
-        toggleModal(true);
-      });
-
-      openSocial && openSocial.addEventListener('click', e => {
-        e.preventDefault();
-        window.open('https://instagram.com/pixorahdesign', '_blank');
-      });
-
-      openWhatsApp && openWhatsApp.addEventListener('click', e => {
-        e.preventDefault();
-        window.open('https://wa.me/919999999999', '_blank');
-      });
-
-      modalCloses.forEach(btn => btn.addEventListener('click', () => toggleModal(false)));
-
-      // Form submission
-      if (form) {
-        form.addEventListener('submit', async e => {
-          e.preventDefault();
-
-          const name = document.getElementById('name').value.trim();
-          const email = document.getElementById('email').value.trim();
-          const phone = document.getElementById('phone').value.trim();
-          const message = document.getElementById('message').value.trim();
-
-          if (!name || !email || !message) {
-            alert('Please fill in required fields.');
-            return;
-          }
-
-          submitBtn.disabled = true;
-
-          try {
-            const res = await fetch(ENDPOINT, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ name, email, phone, message })
-            });
-
-            if (res.ok) {
-              form.reset();
-              form.classList.add('hidden');
-              thankYouMessage.classList.remove('hidden');
-
-              setTimeout(() => toggleModal(false), 5000);
-            } else {
-              const text = await res.text();
-              console.error('Server returned error:', text);
-              alert('Error submitting form.');
-            }
-          } catch (err) {
-            console.error('Network error:', err);
-            alert('Network error submitting form.');
-          } finally {
-            submitBtn.disabled = false;
-          }
-        });
-
-        
-        // Check URL for ?openContact=true
-const urlParams = new URLSearchParams(window.location.search);
-if (urlParams.get('openContact') === 'true') {
-    toggleModal(contactModal, true);
-    // Optionally remove the query from URL without reload
-    window.history.replaceState({}, document.title, window.location.pathname);
-}
-
-      }
-
-      // Stars background
-      (function initStars() {
-        const canvas = document.getElementById('stars');
-        if (!canvas) return;
-        const ctx = canvas.getContext('2d');
-        let stars = [];
-        const numStars = 200;
-
-        function resize() {
-          canvas.width = window.innerWidth;
-          canvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resize);
-        resize();
-
-        for (let i = 0; i < numStars; i++) {
-          stars.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            r: Math.random() * 1.2,
-            v: Math.random() * 0.8
-          });
-        }
-
-        function draw() {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          ctx.fillStyle = 'white';
-          ctx.shadowBlur = 5;
-          ctx.shadowColor = 'white';
-          for (let s of stars) {
-            ctx.beginPath();
-            ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-            ctx.fill();
-          }
-
-          for (let s of stars) {
-            s.y -= s.v;
-            if (s.y < 0) {
-              s.y = canvas.height;
-              s.x = Math.random() * canvas.width;
-            }
-          }
-          requestAnimationFrame(draw);
-        }
-        draw();
-      })();
+    // Desktop actions
+    openContact?.addEventListener('click', e => {
+      e.preventDefault();
+      toggleModal(true);
     });
 
-    // Mobile button actions
-document.getElementById('mOpenContact')?.addEventListener('click', e => {
-  e.preventDefault();
-  toggleModal(true);
-});
+    openSocial?.addEventListener('click', e => {
+      e.preventDefault();
+      window.open('https://instagram.com/pixorahdesign', '_blank');
+    });
 
-document.getElementById('mOpenTools')?.addEventListener('click', e => {
-  e.preventDefault();
-  window.location.href = "toolweuse.html";
-});
+    openWhatsApp?.addEventListener('click', e => {
+      e.preventDefault();
+      window.open('https://wa.me/919999999999', '_blank');
+    });
 
-document.getElementById('mOpenSocial')?.addEventListener('click', e => {
-  e.preventDefault();
-  window.open('https://instagram.com/pixorahdesign', '_blank');
-});
+    modalCloses.forEach(btn => btn.addEventListener('click', () => toggleModal(false)));
 
-document.getElementById('mOpenWhatsApp')?.addEventListener('click', e => {
-  e.preventDefault();
-  window.open('https://wa.me/919999999999', '_blank');
-});
+    // ✅ Mobile button actions (moved inside DOMContentLoaded)
+    document.getElementById('mOpenContact')?.addEventListener('click', e => {
+      e.preventDefault();
+      toggleModal(true);
+    });
 
-//this is for portfolio
-document.getElementById('mOpenPortfolio')?.addEventListener('click', e => {
-  e.preventDefault();
-  window.location.href = "portfolio.html";
-});
+    document.getElementById('mOpenTools')?.addEventListener('click', e => {
+      e.preventDefault();
+      window.location.href = "toolweuse.html";
+    });
 
-  </script>
+    document.getElementById('mOpenSocial')?.addEventListener('click', e => {
+      e.preventDefault();
+      window.open('https://instagram.com/pixorahdesign', '_blank');
+    });
+
+    document.getElementById('mOpenWhatsApp')?.addEventListener('click', e => {
+      e.preventDefault();
+      window.open('https://wa.me/919999999999', '_blank');
+    });
+
+    document.getElementById('mOpenPortfolio')?.addEventListener('click', e => {
+      e.preventDefault();
+      window.location.href = "portfolio.html";
+    });
+
+    // Stars background
+    (function initStars() {
+      const canvas = document.getElementById('stars');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let stars = [];
+      const numStars = 200;
+
+      function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      for (let i = 0; i < numStars; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 1.2,
+          v: Math.random() * 0.8
+        });
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'white';
+        ctx.shadowBlur = 5;
+        ctx.shadowColor = 'white';
+        for (let s of stars) {
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        for (let s of stars) {
+          s.y -= s.v;
+          if (s.y < 0) {
+            s.y = canvas.height;
+            s.x = Math.random() * canvas.width;
+          }
+        }
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+  });
+</script>
+
 
 
 
