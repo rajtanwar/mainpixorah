@@ -4,24 +4,66 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pixorah Design</title>
+  <title>Pixorah Design | AI & Human | Invitations, Branding & Creative Designs</title>
 
-  <!-- Fonts & utilities -->
+  <!-- SEO Meta -->
+  <meta name="description" content="Pixorah Design LLP blends AI with human creativity to craft wedding invitations, corporate branding, and unique designs. Based in India, we create designs that tell your story." />
+  <meta name="keywords" content="Pixorah Design, AI Design, Wedding Invitations, Event Invitations, Corporate Branding, Logo Design, Creative Agency India, Digital Design, Pixorah" />
+  <meta name="author" content="Pixorah Design LLP" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pixorah Design | AI + Creativity for Invitations & Branding" />
+  <meta property="og:description" content="Pixorah Design blends AI with human creativity to create emotionally resonant wedding invitations, logos, and branding." />
+  <meta property="og:image" content="https://pixorah.com/images/Logo.webp" />
+  <meta property="og:url" content="https://pixorah.com/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pixorah Design | AI Invitations & Creative Branding" />
+  <meta name="twitter:description" content="Blending AI innovation with creativity to tell your story through design." />
+  <meta name="twitter:image" content="https://pixorah.com/images/Logo.webp" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://pixorah.com/" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./images/Logo.webp" />
+
+  <!-- Fonts & Tailwind -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Lottie (animations) -->
+  <!-- Lottie & AOS -->
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
-  <!-- AOS (animations) -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-  <style>
-    html,
-    body {
-      height: 100%;
-    }
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Pixorah Design LLP",
+    "url": "https://pixorah.com/",
+    "logo": "https://pixorah.com/images/Logo.webp",
+    "description": "Pixorah Design blends AI with human creativity to craft emotionally resonant designs for weddings, events, and businesses.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-99999-99999",
+      "contactType": "Customer Support",
+      "areaServed": "IN",
+      "availableLanguage": "English, Hindi"
+    },
+    "sameAs": [
+      "https://instagram.com/pixorahdesign",
+      "https://www.linkedin.com/company/pixorahdesign"
+    ]
+  }
+  </script>
 
+
+  <style>
     body {
       font-family: 'Playfair Display', serif;
       margin: 0;
@@ -38,15 +80,9 @@
       z-index: -1;
     }
 
-    .logo-hover:hover {
-      transform: scale(1.06);
-      transition: transform .25s ease;
-    }
-
     .floating-nav {
       background: rgba(0, 0, 0, .7);
       backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, .08);
       box-shadow: 0 8px 32px rgba(0, 0, 0, .3);
     }
@@ -68,7 +104,6 @@
     .glass-card {
       background: rgba(255, 255, 255, 0.04);
       backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
       border: 1px solid rgba(255, 255, 255, 0.04);
     }
 
@@ -84,71 +119,75 @@
 </head>
 
 <body>
-
+  <!-- Background Stars -->
   <canvas id="stars"></canvas>
-<!-- Floating Nav -->
-<nav class="floating-nav fixed top-6 left-1/2 transform -translate-x-1/2 z-50 rounded-full px-4 py-3 flex items-center space-x-4 text-white">
-  <!-- Desktop (show full text) -->
-  <div class="hidden sm:flex space-x-6">
-    <a href="#" id="openContact">📞 <span>We’ll Reach You in 10 Mins</span></a>
-    <a href="toolweuse.html" id="openTools">🛠 <span>Tools We Use</span></a>
-    <a href="portfolio.html" id="openPortfolio">🎨 <span>Our Portfolio</span></a> <!-- ✅ NEW -->
-    <a href="#" id="openSocial">🌐 <span>Our Social Life</span></a>
-    <a href="#" id="openWhatsApp">💬 <span>WhatsApp</span></a>
-  </div>
 
-  <!-- Mobile (icons only) -->
-  <div class="flex sm:hidden space-x-4 text-lg">
-    <button id="mOpenContact" title="Contact">📞</button>
-    <button id="mOpenTools" title="Tools">🛠</button>
-    <button id="mOpenPortfolio" title="Portfolio">🎨</button> <!-- ✅ NEW -->
-    <button id="mOpenSocial" title="Social">🌐</button>
-    <button id="mOpenWhatsApp" title="WhatsApp">💬</button>
+  <header>
+   <!-- Floating Nav -->
+<nav class="floating-nav fixed top-6 left-1/2 transform -translate-x-1/2 z-50 rounded-full px-4 py-3 flex items-center justify-between w-[90%] md:w-auto text-white" role="navigation" aria-label="Main Navigation">
+  <!-- Logo or Site Name -->
+  <!--<a href="/" class="font-bold text-lg">Pixorah</a> -->
+
+  <!-- Hamburger Button (Mobile) -->
+  <button id="menuBtn" class="md:hidden text-2xl focus:outline-none" aria-label="Toggle Menu">
+    ☰
+  </button>
+
+  <!-- Menu Links -->
+  <div id="menuLinks" class="hidden md:flex flex-col md:flex-row md:space-x-6 absolute md:static top-16 left-1/2 md:left-0 transform md:transform-none -translate-x-1/2 md:translate-x-0 bg-black/80 md:bg-transparent rounded-xl md:rounded-none p-6 md:p-0 w-64 md:w-auto text-center">
+    <a href="#" id="openContact" class="block py-2">📞 <span>We’ll Reach You in 10 Mins</span></a>
+    <a href="toolweuse.html" class="block py-2">🛠 <span>Tools We Use</span></a>
+    <a href="portfolio.html" class="block py-2">🎨 <span>Our Portfolio</span></a>
+    <a href="aboutus.html" id="openAbout" class="block py-2">ℹ️ <span>About Us</span></a>
+    <a href="https://instagram.com/pixorahdesign" target="_blank" class="block py-2">🌐 <span>Our Social Life</span></a>
+    <a href="https://wa.me/919999999999" target="_blank" class="block py-2">💬 <span>WhatsApp</span></a>
   </div>
 </nav>
 
+  </header>
 
-  <!-- Hero -->
-  <section class="hero py-36 px-6 text-center" data-aos="fade-down">
-    <img src="./images/Logo.webp" alt="Pixorah Logo" class="mx-auto w-28 mb-4 rounded-full logo-hover" />
-    <h1 class="text-4xl md:text-6xl font-bold text-white">Pixorah Design</h1>
-    <p class="mt-4 text-lg text-gray-300 italic">Blending AI with Creativity to Tell Your Story</p>
-  </section>
+  <main>
+    <!-- Hero -->
+    <section class="hero py-36 px-6 text-center" data-aos="fade-down">
+      <img src="./images/Logo.webp" alt="Pixorah Design Logo" class="mx-auto w-28 mb-4 rounded-full" />
+      <h1 class="text-4xl md:text-6xl font-bold text-white">Pixorah Design</h1>
+      <p class="mt-4 text-lg text-gray-300 italic">Creating designs that tell your story.</p>
+    </section>
 
-  <!-- About + Lottie -->
-  <section class="px-6 py-16 max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center" data-aos="fade-right">
-    <div>
-      <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">About Pixorah</h2>
-      <p class="text-lg text-gray-200 mb-4">Founded in the winter of 2024, <span class="font-bold text-white">Pixorah Design</span> blends AI with human intelligence to craft emotionally resonant designs.</p>
-      <p class="text-lg text-gray-200">We build designs that are <span class="font-semibold text-white">fast</span>, <span class="font-semibold text-white">thoughtful</span> and <span class="font-semibold text-white">creative</span>.</p>
-    </div>
-    <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_kyu7xb1v.json" background="transparent" speed="1" loop autoplay class="w-full h-72"></lottie-player>
-  </section>
-
-  <!-- Services -->
-  <section class="px-6 py-20" data-aos="fade-up">
-    <h2 class="text-3xl font-bold text-center mb-12 text-white">Our Services</h2>
-    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      <div class="p-6 border rounded-xl shadow-md hover:shadow-xl transition duration-300 glass-card">
-        <h3 class="text-xl font-semibold mb-2 text-gray-100">Wedding & Event Invitations</h3>
-        <p class="text-sm text-gray-200">Elegant, personalized invites for weddings and special events.</p>
+    <!-- About -->
+    <section id="about" class="px-6 py-16 max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center" data-aos="fade-right">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">About Pixorah</h2>
+        <p class="text-lg text-gray-200 mb-4">Founded in 2024, <strong>Pixorah Design LLP</strong> combines AI with human creativity to craft meaningful designs.</p>
+        <p class="text-lg text-gray-200">We specialize in <strong>Digital invitations</strong>, <strong>corporate branding</strong>, <strong>social media posts</strong>and <strong>AI-powered creative assets</strong>.</p>
       </div>
-      <div class="p-6 border rounded-xl shadow-md hover:shadow-xl transition duration-300 glass-card">
-        <h3 class="text-xl font-semibold mb-2 text-gray-100">Corporate Branding</h3>
-        <p class="text-sm text-gray-200">Logos, brochures and brand identity packages.</p>
-      </div>
-      <div class="p-6 border rounded-xl shadow-md hover:shadow-xl transition duration-300 glass-card">
-        <h3 class="text-xl font-semibold mb-2 text-gray-100">AI-Powered Graphics</h3>
-        <p class="text-sm text-gray-200">Art-driven assets using AI with a human creative layer.</p>
-      </div>
-    </div>
-  </section>
+      <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_kyu7xb1v.json" background="transparent" speed="1" loop autoplay class="w-full h-72" aria-label="Creative Design Animation"></lottie-player>
+    </section>
 
-  <!-- Process -->
-  <section id="our-process" class="py-20 px-6 text-white text-center" data-aos="fade-up">
-    <h2 class="text-4xl font-bold mb-10">Our Creative Process</h2>
-    <p class="text-lg max-w-2xl mx-auto mb-12 text-gray-300">At Pixorah, design is a journey.</p>
+    <!-- Services -->
+    <section id="services" class="px-6 py-20" data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-center mb-12 text-white">Our Design Services</h2>
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <article class="glass-card p-6 border rounded-xl shadow-md">
+          <h3 class="text-xl font-semibold mb-2 text-gray-100">Wedding & Event Invitations</h3>
+          <p class="text-sm text-gray-200">Elegant, AI-personalized wedding and event invites tailored for your story.</p>
+        </article>
+        <article class="glass-card p-6 border rounded-xl shadow-md">
+          <h3 class="text-xl font-semibold mb-2 text-gray-100">Corporate Branding</h3>
+          <p class="text-sm text-gray-200">Logo design, brochures, and complete brand identity solutions.</p>
+        </article>
+        <article class="glass-card p-6 border rounded-xl shadow-md">
+          <h3 class="text-xl font-semibold mb-2 text-gray-100">AI-Powered Graphics</h3>
+          <p class="text-sm text-gray-200">Unique graphics and creative assets powered by AI innovation.</p>
+        </article>
+      </div>
+    </section>
 
+<!-- Process -->
+    <section id="our-process" class="py-20 px-6 text-white text-center" data-aos="fade-up">
+      <h2 class="text-4xl font-bold mb-10">Our Creative Process</h2>
+      <p class="text-lg max-w-2xl mx-auto mb-12 text-gray-300">We blend technology with human touch to deliver fast, thoughtful, and emotional designs.</p>
+    
     <div class="max-w-4xl mx-auto space-y-12 relative border-l-2 border-gray-700 pl-8">
       <div class="relative flex gap-6 items-start">
         <div class="absolute -left-5 top-2 w-4 h-4 bg-white rounded-full border-4 border-[#1f1f1f]"></div>
@@ -188,42 +227,40 @@
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="px-6 py-20 text-white" data-aos="fade-up">
-    <h2 class="text-3xl font-bold text-center mb-12">What Our Clients Say</h2>
-    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-8">
-      <div class="glass-card p-6 rounded-xl shadow-lg w-full md:w-1/2">
-        <p class="mb-4 italic">“Pixorah brought our vision to life with stunning designs.”</p>
-        <p class="font-semibold">— Anjali R.</p>
+<!-- Testimonials -->
+    <section id="testimonials" class="px-6 py-20 text-white" data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-center mb-12">What Our Clients Say</h2>
+      <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-8">
+        <blockquote class="glass-card p-6 rounded-xl shadow-lg w-full md:w-1/2">
+          <p class="mb-4 italic">“Pixorah brought our vision to life with stunning designs.”</p>
+          <footer class="font-semibold">— Anjali R.</footer>
+        </blockquote>
+        <blockquote class="glass-card p-6 rounded-xl shadow-lg w-full md:w-1/2">
+          <p class="mb-4 italic">“Professional, fast, and deeply personalized.”</p>
+          <footer class="font-semibold">— Ramesh & Nita</footer>
+        </blockquote>
       </div>
-      <div class="glass-card p-6 rounded-xl shadow-lg w-full md:w-1/2">
-        <p class="mb-4 italic">“Professional, fast, and deeply personalized.”</p>
-        <p class="font-semibold">— Ramesh & Nita</p>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Footer -->
+ <!-- Footer -->
   <footer class="hero text-center py-8 border-t border-gray-700 text-sm text-gray-400">
     <p>&copy; 2025 Pixorah Design LLP. All rights reserved.</p>
     <p class="mt-2">📧 <a href="mailto:info@pixorah.com" class="text-gray-300 hover:text-white">info@pixorah.com</a></p>
   </footer>
 
-  <!-- CONTACT MODAL -->
-  <div id="contactModal" class="fixed inset-0 bg-black bg-opacity-60 hidden justify-center items-center z-50" aria-hidden="true">
+  <!-- Contact Modal -->
+  <div id="contactModal" class="fixed inset-0 bg-black bg-opacity-60 hidden flex justify-center items-center z-50" aria-hidden="true">
     <div class="bg-white bg-opacity-10 backdrop-blur-md border border-white/20 rounded-xl p-8 max-w-lg w-full text-white relative">
       <button aria-label="Close" class="absolute top-2 right-4 text-2xl text-white modal-close">&times;</button>
       <h3 class="text-2xl font-bold mb-2">We’ll Reach You in 10 Mins</h3>
-      <p class="text-sm text-gray-300 mb-4">📞 <strong>+91 99999 99999</strong> &nbsp; | &nbsp; 📧 <strong>info@pixorah.com</strong></p>
-
       <form id="contactForm" class="space-y-4" novalidate>
-        <input id="name" name="name" type="text" placeholder="Your Name" class="w-full px-4 py-2 rounded bg-white bg-opacity-10 border border-white/30 focus:outline-none" required />
-        <input id="email" name="email" type="email" placeholder="Your Email" class="w-full px-4 py-2 rounded bg-white bg-opacity-10 border border-white/30 focus:outline-none" required />
-        <input id="phone" name="phone" type="text" placeholder="Phone Number" class="w-full px-4 py-2 rounded bg-white bg-opacity-10 border border-white/30" required />
-        <textarea id="message" name="message" placeholder="Design Requirements" class="w-full px-4 py-2 rounded bg-white bg-opacity-10 border border-white/30 h-28 resize-none" required></textarea>
-        <button id="contactSubmit" type="submit" class="w-full py-2 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold rounded transition">Submit</button>
+        <input id="name" name="name" type="text" placeholder="Your Name" required class="w-full px-4 py-2 rounded bg-white bg-opacity-10 border border-white/30" />
+        <input id="email" name="email" type="email" placeholder="Your Email" required class="w-full px-4 py-2 rounded bg-white bg-opacity-10 border border-white/30" />
+        <input id="phone" name="phone" type="text" placeholder="Phone Number" class="w-full px-4 py-2 rounded bg-white bg-opacity-10 border border-white/30" />
+        <textarea id="message" name="message" placeholder="Design Requirements" required class="w-full px-4 py-2 rounded bg-white bg-opacity-10 border border-white/30 h-28 resize-none"></textarea>
+        <button id="contactSubmit" type="submit" class="w-full py-2 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold rounded">Submit</button>
       </form>
-
       <div id="thankYouMessage" class="hidden text-center mt-6">
         <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_3rwasyjy.json" background="transparent" speed="1" style="width:100px;height:100px;margin:0 auto;" autoplay></lottie-player>
         <p class="text-white mt-4">Thank you! We’ll get back to you shortly.</p>
@@ -231,136 +268,134 @@
     </div>
   </div>
 
+   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      AOS.init();
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    AOS.init();
+      const modal = document.getElementById('contactModal');
+      const openContact = document.getElementById('openContact');
+      const closes = document.querySelectorAll('.modal-close');
+      const form = document.getElementById('contactForm');
+      const thankYou = document.getElementById('thankYouMessage');
+      const submitBtn = document.getElementById('contactSubmit');
+      const ENDPOINT = 'https://backend-6fb5.onrender.com/api/contact';
 
-    // Modal and form references
-    const contactModal = document.getElementById('contactModal');
-    const openContact = document.getElementById('openContact');
-    const openSocial = document.getElementById('openSocial');
-    const openWhatsApp = document.getElementById('openWhatsApp');
-    const modalCloses = document.querySelectorAll('.modal-close');
+      function toggleModal(show) {
+        if (show) {
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          form.classList.remove('hidden');
+          thankYou.classList.add('hidden');
+        } else {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }
+      }
 
-    const form = document.getElementById('contactForm');
-    const thankYouMessage = document.getElementById('thankYouMessage');
-    const submitBtn = document.getElementById('contactSubmit');
+      openContact?.addEventListener('click', e => { e.preventDefault(); toggleModal(true); });
+      closes.forEach(btn => btn.addEventListener('click', () => toggleModal(false)));
 
-    const ENDPOINT = 'https://backend-6fb5.onrender.com/api/contact';
+      form?.addEventListener('submit', async e => {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const message = document.getElementById('message').value.trim();
 
-    function toggleModal(show) {
-      if (show) {
-        form.classList.remove('hidden');
-        thankYouMessage.classList.add('hidden');
-        submitBtn.disabled = false;
-        contactModal.classList.remove('hidden');
-        contactModal.classList.add('flex');
-        contactModal.setAttribute('aria-hidden', 'false');
-      } else {
-        contactModal.classList.add('hidden');
-        contactModal.classList.remove('flex');
-        contactModal.setAttribute('aria-hidden', 'true');
+        if (!name || !email || !message) {
+          alert('Please fill in required fields.');
+          return;
+        }
+        submitBtn.disabled = true;
+        try {
+          const res = await fetch(ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, phone, message })
+          });
+          if (res.ok) {
+            form.reset();
+            form.classList.add('hidden');
+            thankYou.classList.remove('hidden');
+            setTimeout(() => toggleModal(false), 5000);
+          } else {
+            alert('Submission failed. Try again.');
+          }
+        } catch (err) {
+          console.error(err);
+          alert('Network error.');
+        } finally {
+          submitBtn.disabled = false;
+        }
+      });
+
+      // Mobile menu toggle
+const menuBtn = document.getElementById("menuBtn");
+const menuLinks = document.getElementById("menuLinks");
+
+menuBtn?.addEventListener("click", () => {
+  menuLinks.classList.toggle("hidden");
+});
+
+
+      // Stars background
+      const canvas = document.getElementById('stars');
+      const ctx = canvas.getContext('2d');
+      let stars = [];
+
+      function initStars() {
+        stars = [];
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        for (let i = 0; i < 120; i++) {
+          stars.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            radius: Math.random() * 1.2,
+            speed: Math.random() * 0.6
+          });
+        }
+      }
+      function animateStars() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'white';
+        stars.forEach(star => {
+          ctx.beginPath();
+          ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+          ctx.fill();
+          star.y += star.speed;
+          if (star.y > canvas.height) star.y = 0;
+        });
+        requestAnimationFrame(animateStars);
+      }
+      initStars();
+      animateStars();
+      window.addEventListener('resize', initStars);
+    });
+
+    //for aboutusform
+  window.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("openContact") === "true") {
+      const modal = document.getElementById("contactModal");
+      if (modal) {
+        modal.classList.remove("hidden");  // show the modal
+        modal.setAttribute("aria-hidden", "false");
       }
     }
 
-    // Desktop actions
-    openContact?.addEventListener('click', e => {
-      e.preventDefault();
-      toggleModal(true);
+    // ✅ Close modal when clicking on X
+    document.querySelectorAll(".modal-close").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const modal = document.getElementById("contactModal");
+        modal.classList.add("hidden");
+        modal.setAttribute("aria-hidden", "true");
+      });
     });
-
-    openSocial?.addEventListener('click', e => {
-      e.preventDefault();
-      window.open('https://instagram.com/pixorahdesign', '_blank');
-    });
-
-    openWhatsApp?.addEventListener('click', e => {
-      e.preventDefault();
-      window.open('https://wa.me/919999999999', '_blank');
-    });
-
-    modalCloses.forEach(btn => btn.addEventListener('click', () => toggleModal(false)));
-
-    // ✅ Mobile button actions (moved inside DOMContentLoaded)
-    document.getElementById('mOpenContact')?.addEventListener('click', e => {
-      e.preventDefault();
-      toggleModal(true);
-    });
-
-    document.getElementById('mOpenTools')?.addEventListener('click', e => {
-      e.preventDefault();
-      window.location.href = "toolweuse.html";
-    });
-
-    document.getElementById('mOpenSocial')?.addEventListener('click', e => {
-      e.preventDefault();
-      window.open('https://instagram.com/pixorahdesign', '_blank');
-    });
-
-    document.getElementById('mOpenWhatsApp')?.addEventListener('click', e => {
-      e.preventDefault();
-      window.open('https://wa.me/919999999999', '_blank');
-    });
-
-    document.getElementById('mOpenPortfolio')?.addEventListener('click', e => {
-      e.preventDefault();
-      window.location.href = "portfolio.html";
-    });
-
-    // Stars background
-    (function initStars() {
-      const canvas = document.getElementById('stars');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-      let stars = [];
-      const numStars = 200;
-
-      function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      }
-      window.addEventListener('resize', resize);
-      resize();
-
-      for (let i = 0; i < numStars; i++) {
-        stars.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          r: Math.random() * 1.2,
-          v: Math.random() * 0.8
-        });
-      }
-
-      function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = 'white';
-        ctx.shadowBlur = 5;
-        ctx.shadowColor = 'white';
-        for (let s of stars) {
-          ctx.beginPath();
-          ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-          ctx.fill();
-        }
-
-        for (let s of stars) {
-          s.y -= s.v;
-          if (s.y < 0) {
-            s.y = canvas.height;
-            s.x = Math.random() * canvas.width;
-          }
-        }
-        requestAnimationFrame(draw);
-      }
-      draw();
-    })();
   });
-</script>
-
-
-
-
+  
+  </script>
 </body>
-
 </html>
