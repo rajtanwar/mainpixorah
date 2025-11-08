@@ -192,6 +192,11 @@
       main.article-content { padding:1.5rem 1rem; }
       header.hero { padding:4rem 1rem 3rem; }
     }
+     @media (max-width: 640px) {
+  a[href="consultant.html"].fixed {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
   </style>
 </head>
 <body>
@@ -294,6 +299,17 @@
       AOS.init({ duration: 800, once: true });
     });
   </script>
+
+    <!-- Floating Free Consultation Button -->
+<a href="consultant.html" 
+   aria-label="Free Design Consultation"
+   class="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-5 py-3 rounded-full shadow-2xl font-semibold text-white hover:scale-105 transition transform"
+   style="background: linear-gradient(90deg, #ff8b7e, #ffb84d);">
+   <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+     <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8S3 16.418 3 12 7.03 4 12 4s9 3.582 9 8z"/>
+   </svg>
+   <span>Free Consultation</span>
+</a>
 
 </body>
 </html>

@@ -1,0 +1,15 @@
+# robots.txt for Pixorah Design LLP
+# Controls how search engines crawl and index Pixorah.com and www.pixorah.com
+
+User-agent: *
+Disallow: /cdn-cgi/l/email-protection
+Allow: /
+
+# Sitemap helps search engines discover all your pages efficiently
+Sitemap: https://www.pixorah.com/sitemap.xml
+Sitemap: https://pixorah.com/sitemap.xml
+
+# Notes:
+# - Blocks the specific Cloudflare email protection path that causes 404
+# - Applies to both www and non-www versions of your domain
+# - Everything else remains open for indexing

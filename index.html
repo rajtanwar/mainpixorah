@@ -125,6 +125,12 @@
       transform: scale(1.25);
       z-index: 10;
     }
+
+     @media (max-width: 640px) {
+  a[href="consultant.html"].fixed {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }}
   </style>
 </head>
 
@@ -255,6 +261,16 @@
     </section>
   </main>
 
+      <!-- CTA Section -->
+    <section class="text-center py-16 bg-gradient-to-r from-[#ff8b7e] to-[#ffb84d] text-white" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Start Your Free Design Consultation</h2>
+      <p class="text-lg mb-8 opacity-90">Let's bring your vision to life with creativity and strategy.</p>
+      <a href="consultant.html" class="px-8 py-3 bg-white text-[#ff8b7e] font-semibold rounded-full shadow-lg hover:bg-opacity-90 transition-all">
+        Free Design Consultation
+      </a>
+    </section>
+
+
  <!-- Footer -->
   <footer class="hero text-center py-8 border-t border-gray-700 text-sm text-gray-400">
     <p>&copy; 2025 Pixorah Design LLP. All rights reserved.</p>
@@ -292,7 +308,9 @@
       const form = document.getElementById('contactForm');
       const thankYou = document.getElementById('thankYouMessage');
       const submitBtn = document.getElementById('contactSubmit');
-      const ENDPOINT = 'https://backend-6fb5.onrender.com/api/contact';
+      const ENDPOINT = 'https://backend-6fb5.onrender.com/api/Contact/save';
+
+     
 
       function toggleModal(show) {
         if (show) {
