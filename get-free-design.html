@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Primary Meta Tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Free Design Consultation — Pixorah | Know What’s Right For Your Brand</title>
+  <meta name="description" content="Not sure what design your brand needs? Book a free design consultation with Pixorah to discover the right visual direction, platform, and scope for your project." />
+  <meta name="keywords" content="free design consultation, Pixorah, design advice, brand design, website design, logo consultation, AI powered design" />
+  <meta name="author" content="Pixorah Design LLP" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Free Design Consultation — Pixorah" />
+  <meta property="og:description" content="Not sure what design your brand needs? Book a free design consultation with Pixorah to discover the right visual direction, platform, and scope for your project." />
+  <meta property="og:image" content="https://www.pixorah.com/images/design-con.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.pixorah.com/free-design-consultation.html" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free Design Consultation — Pixorah" />
+  <meta name="twitter:description" content="Not sure what design your brand needs? Book a free design consultation with Pixorah to discover the right visual direction, platform, and scope for your project." />
+  <meta name="twitter:image" content="https://www.pixorah.com/images/design-con.jpg" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg-1: #0f0f0f;
+      --bg-2: #141414;
+      --text: #f5f5f5;
+      --muted: #c7c7c7;
+      --accent: #facc15;
+      --glass: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.06);
+      --card-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      --radius: 12px;
+      --max-width: 1100px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(circle at 10% 10%, #1f2937 0%, var(--bg-1) 50%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
+      padding-bottom:80px; /* make space if sticky CTA used */
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block;border-radius:10px}
+
+    /* Page container */
+    .container{
+      width:100%;
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:48px 24px;
+    }
+
+    /* Header */
+    header.site-header{
+      text-align:center;
+      padding:48px 24px 24px;
+      position:relative;
+    }
+    header .title{
+      font-family:"Playfair Display", serif;
+      font-size:2.6rem;
+      margin-bottom:8px;
+      color:var(--text);
+    }
+    header .subtitle{
+      color:var(--muted);
+      font-size:1rem;
+    }
+
+    /* Hero card */
+    .hero-card{
+      margin:28px auto 40px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:28px;
+      box-shadow:var(--card-shadow);
+      display:flex;
+      gap:24px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .hero-left{
+      flex:1 1 440px;
+      min-width:260px;
+    }
+    .hero-left p{color:var(--muted); margin:8px 0 16px; font-size:1rem}
+    .hero-cta{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .btn-primary{
+      background:var(--accent);
+      color:#000;
+      padding:12px 20px;
+      border-radius:999px;
+      font-weight:700;
+      display:inline-block;
+      transition:transform .15s ease, box-shadow .15s ease;
+      border:none;
+      cursor:pointer;
+    }
+    .btn-primary:focus{outline:3px solid rgba(250,204,21,0.18)}
+    .btn-primary:hover{transform:translateY(-3px)}
+    .btn-ghost{
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      color:var(--muted);
+      background:transparent;
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    /* Content */
+    main.article{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:28px;
+    }
+    article.card{
+      background:var(--glass);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow:0 8px 22px rgba(0,0,0,0.5);
+    }
+
+    article.card h2, article.card h3{
+      font-family:"Playfair Display", serif;
+      color:var(--text);
+      margin-bottom:12px;
+    }
+    article.card p{color:var(--muted); margin-bottom:12px}
+    ul.simple{list-style:disc;margin-left:18px;color:var(--muted); margin-bottom:12px}
+    blockquote{border-left:4px solid var(--accent); padding-left:12px;color:var(--muted); font-style:italic; margin:12px 0}
+
+    /* CTA section inside article */
+    .in-article-cta{
+      display:flex;
+      gap:20px;
+      align-items:center;
+      justify-content:space-between;
+      padding:20px;
+      background:linear-gradient(180deg, rgba(250,204,21,0.04), rgba(255,255,255,0.01));
+      border-radius:12px;
+      border:1px solid rgba(250,204,21,0.08);
+      margin-top:14px;
+      flex-wrap:wrap;
+    }
+    .in-article-cta .left{flex:1 1 400px}
+    .in-article-cta .right{display:flex; gap:12px; align-items:center; flex:0 0 auto}
+
+    /* Author info & footer */
+    .author{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      background:transparent;
+      padding:12px;
+      border-radius:12px;
+    }
+    .author img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:1px solid var(--border)}
+    footer.site-footer{
+      text-align:center;
+      padding:36px 24px 60px;
+      color:var(--muted);
+      font-size:0.95rem;
+      margin-top:30px;
+      border-top:1px solid var(--border);
+    }
+
+    /* Responsive */
+    @media(min-width:900px){
+      main.article{grid-template-columns: 1fr 360px; gap:28px}
+      .hero-card{padding:36px}
+    }
+    @media(max-width:640px){
+      header .title{font-size:1.8rem}
+      .in-article-cta{flex-direction:column;align-items:flex-start}
+      .in-article-cta .right{width:100%; display:flex; justify-content:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="site-header" role="banner" aria-label="Pixorah Free Design Consultation">
+      <h1 class="title">Free Design Discovery (Start With Clarity)</h1>
+      <p class="subtitle">Not sure what design you need? A short free consultation will help you discover the right visual direction, scope, and next steps.</p>
+    </header>
+
+    <!-- Hero Card with CTA -->
+    <div class="hero-card" role="region" aria-labelledby="hero-heading" data-aos="fade-up">
+      <div class="hero-left">
+        <h2 id="hero-heading" style="font-family:'Playfair Display', serif; margin-bottom:6px; font-size:1.45rem; color:var(--text);">
+          Know what’s right for your brand — without guessing
+        </h2>
+        <p>Many people know they need design, but they don’t know what kind, which platform, or how much to invest. In a 20–30 minute free call we give clear, practical advice — no sales pressure.</p>
+
+        <div class="hero-cta" style="margin-top:10px;">
+          <!-- Primary CTA -->
+          <a href="/frontend//consultant.html" class="btn-primary" role="button" aria-label="Book a free design consultation at Pixorah">Book my free consultation →</a>
+
+          <!-- Secondary CTA -->
+          <a href="#what-to-expect" class="btn-ghost" role="button" aria-label="Read what to expect during a Pixorah consultation">What to expect</a>
+        </div>
+      </div>
+
+      <div class="hero-right" style="flex:0 0 280px; min-width:220px;">
+        <img src="/frontend/images/design-con.png" alt="Illustration of a designer and client discussing ideas" width="280" height="180" style="border-radius:12px; object-fit:cover;">
+      </div>
+    </div>
+
+    <!-- Article + Sidebar -->
+    <main class="article" role="main">
+      <!-- Main content -->
+      <article class="card" data-aos="fade-right">
+        <h2>Why a Free Design Consultation Helps</h2>
+        <p>Design decisions are full of small but important choices — colors, typography, layout, and platform. When you don’t know what’s right, you either copy someone else or spend money on the wrong solution.</p>
+
+        <h3 id="what-to-expect">What happens during your free consultation</h3>
+        <p>During the session, our designers will:</p>
+        <ul class="simple">
+          <li>Ask focused questions to understand your goals and audience</li>
+          <li>Clarify whether you need a logo refresh, a landing page, or a full brand system</li>
+          <li>Recommend the most cost-effective next steps</li>
+          <li>Show examples and quick mood directions so you can visualise the result</li>
+        </ul>
+
+        <blockquote>"I thought I needed a full website — after the call we focused on a high-converting landing page and saved time + budget."</blockquote>
+
+        <h3>What you’ll walk away with</h3>
+        <p>After the consultation you’ll have:</p>
+        <ul class="simple">
+          <li>A clear next-step recommendation</li>
+          <li>Design direction (mood, colors, layout suggestions)</li>
+          <li>Estimated scope and rough timeline</li>
+          <li>Confidence to move forward — or to take more time if needed</li>
+        </ul>
+
+        <!-- In-article CTA -->
+        <div class="in-article-cta" data-aos="fade-up" role="region" aria-label="Call to action to book free consultation">
+          <div class="left">
+            <strong style="display:block; font-size:1.05rem; margin-bottom:6px;">Ready to discover the right design for you?</strong>
+            <div style="color:var(--muted); font-size:0.95rem;">No-pressure, 20–30 minute session. We’ll help you see the best path forward.</div>
+          </div>
+          <div class="right">
+            <a href="/frontend/consultant.html" class="btn-primary" aria-label="Book the free consultation with Pixorah">Get your free consultation</a>
+            <a href="mailto:info@pixorah.com?subject=Free%20Design%20Consultation&body=Hi%20Pixorah%2C%0A%0AI%27d%20like%20to%20book%20a%20free%20design%20consultation.%20My%20preferred%20times%20are%3A%0A1.%20%0A2.%20%0A3.%20%0A%0AThanks%2C%0A" class="btn-ghost" aria-label="Email Pixorah to book consultation">Email us →</a>
+          </div>
+        </div>
+
+        <h3>Who should book this</h3>
+        <p>This is ideal if you:</p>
+        <ul class="simple">
+          <li>Are starting a new business or product</li>
+          <li>Want to refresh your brand but don’t know where to start</li>
+          <li>Have an event and need invitation or promotion design</li>
+          <li>Are a creator building a personal brand</li>
+          <li>Feel stuck and want a clear, practical plan</li>
+        </ul>
+
+        <h3>Why Pixorah?</h3>
+        <p>We pair experienced human designers with licensed AI tools (Figma, Canva, Adobe ecosystem) to deliver work that is fast, high-quality, and aligned to your goals. Our consultation focuses on clarity — not upsells.</p>
+
+        <p style="margin-top:10px;"><strong>Want a short version for social?</strong> We can provide a 2-line summary or a 60-second video script after the call — just ask during the session.</p>
+
+        <p style="margin-top:16px;"><strong>Still unsure?</strong> Book the call — there’s no obligation. You’ll leave with clarity, even if you’re not ready to start immediately.</p>
+
+        <!-- Closing CTA -->
+        <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="/frontend/consultant.html" class="btn-primary" aria-label="Get free design consultation">Book my free consultation</a>
+          <a href="/frontend/aboutus.html" class="btn-ghost" aria-label="View Pixorah services">See our services</a>
+        </div>
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="card" data-aos="fade-left" aria-labelledby="sidebar-heading" role="complementary">
+        <h3 id="sidebar-heading">Quick FAQ</h3>
+        <p><strong>Is it truly free?</strong> Yes — the initial consultation is free and comes with no obligation.</p>
+        <p><strong>How long is the session?</strong> Usually 20–30 minutes.</p>
+        <p><strong>What do I need to prepare?</strong> Bring examples you like (links or images) and a brief idea of your goals.</p>
+
+        <hr style="border:none;height:1px;background:var(--border);margin:16px 0;border-radius:2px;">
+
+        <h3>What our clients say</h3>
+        <p style="color:var(--muted)">"The Pixorah call cleared months of confusion. We launched with a design plan in 3 weeks." — R.S.</p>
+
+        <div style="margin-top:14px;">
+          <a href="/consultant.html" class="btn-primary" style="width:100%; text-align:center;" aria-label="Book consultation from sidebar">Book a free consult</a>
+        </div>
+      </aside>
+    </main>
+
+    <!-- Author -->
+    <div style="max-width:var(--max-width); margin:20px auto 0; padding:0 24px;" data-aos="fade-up">
+      <div class="author" role="contentinfo">
+        <img src="/frontend/images/Logo.webp" alt="Pixorah design team" width="64" height="64">
+        <div>
+          <div style="font-weight:700;">Pixorah Design Team</div>
+          <div style="color:var(--muted); font-size:0.95rem;">Creating designs that tell your story.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      © 2025 Pixorah Design LLP · Creating Designs That Tell Your Story · <a href="/consultant.html" style="color:var(--accent); font-weight:600">Book your free consultation</a>
+    </footer>
+  </div>
+
+  <!-- AOS & small init script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      AOS.init({ duration: 700, once: true });
+    });
+  </script>
+</body>
+</html>

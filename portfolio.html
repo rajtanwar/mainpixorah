@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M029FXJ2JS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M029FXJ2JS');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Portfolio - Pixorah Design</title>
+
+  <!-- Elfsight platform script -->
+  <script src="https://elfsightcdn.com/platform.js" async></script>
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: radial-gradient(ellipse at top, #1a1a1a 0%, #0f0f0f 100%);
+      color: #f5f5f5;
+      position: relative;
+    }
+
+    /* Stars background canvas */
+    #stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #bbb;
+    }
+
+    .portfolio {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 16px 80px;
+    }
+    .portfolio h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #fff;
+    }
+
+    /* Widget responsive */
+    .elfsight-app {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Stars Background -->
+  <canvas id="stars"></canvas>
+
+  <!-- Header -->
+  <header>
+    <h1>Pixorah Design</h1>
+    <p>Creating Designs That Tell Your Story</p>
+  </header>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio">
+    <h2>Our Portfolio</h2>
+    <div class="elfsight-app-4f59759f-4f52-4e51-b10f-7f2111436e38" data-elfsight-app-lazy></div>
+  </section>
+
+  <!-- Stars Animation Script -->
+  <script>
+    (function initStars() {
+      const canvas = document.getElementById('stars');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let stars = [];
+      const numStars = 200;
+
+      function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      for (let i = 0; i < numStars; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 1.2,
+          v: Math.random() * 0.8
+        });
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'white';
+        ctx.shadowBlur = 5;
+        ctx.shadowColor = 'white';
+        for (let s of stars) {
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        for (let s of stars) {
+          s.y -= s.v;
+          if (s.y < 0) {
+            s.y = canvas.height;
+            s.x = Math.random() * canvas.width;
+          }
+        }
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+  </script>
+
+</body>
+</html>

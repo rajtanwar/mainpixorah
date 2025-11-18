@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M029FXJ2JS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M029FXJ2JS');
+</script>
+  <!-- SEO Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover how Pixorah combines talented digital designers with licensed AI and design tools like Figma, Canva, and Adobe Photoshop to create personalized, high-quality designs for websites, invitations, and branding.">
+  <meta name="keywords" content="Pixorah design workflow, AI + human creativity, licensed design tools, personalized design, Figma, Canva, Adobe Photoshop, AI-powered design, creative design process, 2025 design trends, 2026 design trends">
+  <meta name="author" content="Pixorah Design LLP">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="How Pixorah Helps You: Combining Talented Designers with AI Tools for Perfect Designs | Pixorah Blog">
+  <meta property="og:description" content="Learn how Pixorah integrates talented designers and AI-powered tools to deliver fast, personalized, and creative designs for websites, invitations, and branding.">
+  <meta property="og:image" content="https://www.pixorah.com/images/pixorah-workflow.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pixorah.com/blog-pixorah-workflow.html">
+
+  <title>How Pixorah Helps You: Combining Talented Designers with AI Tools | Pixorah Blog</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS (optional if you want) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS for animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <style>
+    :root {
+      --bg-dark: #0f0f0f;
+      --text-light: #f5f5f5;
+      --text-gray: #d1d5db;
+      --accent: #facc15;
+      --glass: rgba(255, 255, 255, 0.04);
+      --border: rgba(255, 255, 255, 0.08);
+      --shadow: rgba(0, 0, 0, 0.4);
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family:"Inter", sans-serif;
+      background: radial-gradient(circle at top left, #1a1a1a, #0f0f0f 60%);
+      color: var(--text-light);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration:none; }
+
+    header.hero {
+      text-align:center;
+      padding:6rem 1rem 4rem;
+      position:relative;
+      overflow:hidden;
+    }
+
+    header.hero::before {
+      content:"";
+      position:absolute;
+      top:-50px; left:50%;
+      transform:translateX(-50%);
+      width:500px; height:500px;
+      background: radial-gradient(circle, rgba(250,204,21,0.15), transparent 70%);
+      filter: blur(100px);
+      z-index:0;
+    }
+
+    header.hero h1 {
+      font-family:"Playfair Display", serif;
+      font-size:2.8rem;
+      color: var(--text-light);
+      margin-bottom:0.5rem;
+      animation: fadeDown 1s ease forwards;
+      opacity:0;
+    }
+
+    header.hero .blog-date {
+      color: var(--text-gray);
+      font-size:0.95rem;
+      margin-bottom:1.5rem;
+      animation: fadeUp 1s ease forwards;
+      opacity:0;
+    }
+
+    main.article-content {
+      max-width:1100px;
+      margin:0 auto;
+      padding:2rem 1rem 5rem;
+      display:flex;
+      flex-direction:column;
+      gap:3rem;
+    }
+
+    main.article-content p {
+      color: var(--text-gray);
+      font-size:1rem;
+    }
+
+    main.article-content h2,h3 {
+      font-family:"Playfair Display", serif;
+      color: var(--text-light);
+      margin:1.5rem 0 0.8rem;
+    }
+
+    main.article-content img {
+      width:100%;
+      border-radius:12px;
+      margin:1rem 0;
+      box-shadow:0 6px 24px var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    main.article-content img:hover {
+      transform: scale(1.03);
+    }
+
+    blockquote {
+      border-left:4px solid var(--accent);
+      padding-left:1rem;
+      font-style:italic;
+      color: var(--text-gray);
+      margin:1.5rem 0;
+    }
+
+    .author-info {
+      display:flex;
+      align-items:center;
+      gap:1rem;
+      padding:1rem;
+      background: var(--glass);
+      border:1px solid var(--border);
+      border-radius:12px;
+      backdrop-filter:blur(6px);
+    }
+
+    .author-info img {
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      object-fit:cover;
+    }
+
+    .back-blog {
+      display:inline-block;
+      margin-top:2rem;
+      padding:0.6rem 1.2rem;
+      background: var(--accent);
+      color:#000;
+      font-weight:600;
+      border-radius:999px;
+      transition:background 0.3s;
+    }
+
+    .back-blog:hover {
+      background:#fde047;
+    }
+
+    footer {
+      text-align:center;
+      padding:3rem 1rem;
+      font-size:0.9rem;
+      color: var(--text-gray);
+      border-top:1px solid var(--border);
+    }
+
+    /* Workflow Cards */
+    .workflow-card {
+      backdrop-filter: blur(6px);
+      background: var(--glass);
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .workflow-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.6);
+    }
+
+    /* Animations */
+    @keyframes fadeDown { from{opacity:0; transform:translateY(-20px);} to{opacity:1; transform:translateY(0);} }
+    @keyframes fadeUp { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+
+    @media(max-width:768px){
+      header.hero h1 { font-size:2.2rem; }
+    }
+
+    @media(max-width:480px){
+      main.article-content { padding:1.5rem 1rem; }
+      header.hero { padding:4rem 1rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>How Pixorah Helps You: AI + Human Designer Workflow</h1>
+    <p class="blog-date">October 21, 2025 · by Pixorah Design Team</p>
+  </header>
+
+  <!-- Article Content -->
+  <main class="article-content">
+
+    <!-- Introduction -->
+    <section data-aos="fade-up">
+      <p>In 2025, businesses and individuals need <strong>fast, high-quality, and personalized designs</strong>. Pixorah delivers this by combining <strong>talented digital designers</strong> with <strong>licensed AI and design tools</strong>, creating a workflow where <strong>human creativity meets intelligent automation</strong>.</p>
+    </section>
+
+    <!-- Talented Team -->
+    <section class="workflow-card" data-aos="fade-up">
+      <h2>Talented Design Team</h2>
+      <p>Pixorah’s team includes skilled digital designers with expertise in typography, color theory, layout design, and branding. They ensure that every design is visually engaging and emotionally resonant.</p>
+    </section>
+
+    <!-- Licensed Design Tools -->
+    <section class="workflow-card" data-aos="fade-up">
+      <h2>Licensed Design Tools</h2>
+      <p>We use the latest versions of <strong>Figma, Canva, and Adobe Photoshop</strong> to craft websites, invitations, and branding assets with precision. These tools allow designers to execute creative ideas efficiently and maintain consistent quality across all projects.</p>
+    </section>
+
+    <!-- AI + Human Creativity -->
+    <section class="workflow-card" data-aos="fade-up">
+      <h2>AI + Human Creativity</h2>
+      <p>When a client shares their requirements, designers leverage <strong>AI-powered tools</strong> to research:</p>
+      <ul>
+        <li>Typography combinations suitable for the brand</li>
+        <li>Color palettes optimized for emotional impact</li>
+        <li>Special visual details to enhance the design</li>
+      </ul>
+      <p>Using these insights, designers combine <strong>AI suggestions</strong> with creative expertise to craft exceptional designs.</p>
+    </section>
+
+    <!-- Workflow Steps -->
+    <section id="workflow" class="py-16" data-aos="fade-up">
+      <h2 class="text-3xl font-extrabold text-white text-center mb-12">Step-by-Step Workflow</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="workflow-card" data-aos="fade-right">
+          <h3>Requirement Analysis</h3>
+          <p>Understand client goals and vision before starting the design.</p>
+        </div>
+        <div class="workflow-card" data-aos="fade-left">
+          <h3>AI Research</h3>
+          <p>Gather typography, color, and layout insights using AI tools.</p>
+        </div>
+        <div class="workflow-card" data-aos="fade-right">
+          <h3>Creative Decision Making</h3>
+          <p>Blend AI data with human creativity to decide the design direction.</p>
+        </div>
+        <div class="workflow-card" data-aos="fade-left">
+          <h3>Design Execution</h3>
+          <p>Use Figma, Canva, or Photoshop to craft the final design.</p>
+        </div>
+        <div class="workflow-card md:col-span-2" data-aos="fade-up">
+          <h3>Quality Assurance</h3>
+          <p>Review every design for aesthetics, precision, and satisfaction.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Benefits -->
+    <section class="workflow-card" data-aos="fade-up">
+      <h2>Why Pixorah Works for You</h2>
+      <ul>
+        <li>Faster delivery without compromising creativity</li>
+        <li>Designs uniquely tailored to your brand</li>
+        <li>Innovative, trend-aligned visuals for 2025 and 2026</li>
+      </ul>
+      <p>With Pixorah, your ideas are transformed into <strong>high-quality, personalized designs</strong> using the perfect balance of human skill and AI insights.</p>
+    </section>
+
+    <!-- Author Info -->
+    <section class="author-info" data-aos="fade-up">
+      <div>
+        <p><strong>Pixorah Design Team</strong></p>
+        <p>Creators of AI-powered, emotionally resonant designs.</p>
+      </div>
+    </section>
+
+    <!-- CTA to Consultant Page -->
+<section class="workflow-card text-center" data-aos="fade-up" style="padding:2rem; margin-top:2rem;">
+  <h2 style="font-family:'Playfair Display',serif; margin-bottom:1rem; color:#fff;">
+    Start Your Design Consultation
+  </h2>
+  <p style="color:#d1d5db; margin-bottom:1.5rem;">
+    Want personalised designs for your website, brand, or invitations?  
+    Talk to our designer + AI system and get the perfect result.
+  </p>
+
+  <a href="/frontend/consultant.html"
+     style="
+      display:inline-block;
+      padding:0.8rem 1.8rem;
+      background:#facc15;
+      color:#000;
+      font-weight:600;
+      border-radius:50px;
+      transition:0.3s;
+     "
+     onmouseover="this.style.background='#fde047'"
+     onmouseout="this.style.background='#facc15'">
+    Get Free Consultation →
+  </a>
+</section>
+
+
+    <!-- Back to Blog Button -->
+    <a href="blog.html" class="back-blog" data-aos="fade-up">← Back to Blog</a>
+
+  </main>
+
+  <footer>
+    © 2025 Pixorah Design LLP · Creating Designs That Tell Your Story
+  </footer>
+
+  <!-- AOS Init -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      AOS.init({ duration: 800, once: true });
+    });
+  </script>
+
+</body>
+</html>
